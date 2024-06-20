@@ -29,3 +29,33 @@ A buildpack transforms application source code by analyzing it and determining t
 ## What happens during the build process?
 
 The build process executes one or more buildpacks against an application’s source code to produce a runnable OCI image. During this process, the build-time base image serves as the environment in which buildpacks are executed, while the runtime base image serves as the foundation for the final application image. Buildpacks can be bundled with a specific build-time base image, resulting in a builder image. Builders offer a convenient way to distribute buildpacks.
+
+## What is a builder?
+
+A builder is an OCI image that contains an ordered combination of buildpacks and a build-time base image. A builder uses the lifecycle to run the detect phase for all the buildpacks it contains, in sequence, and then proceeds to run the build phase for all the buildpacks that passed detection. This allows a single builder to automatically detect and build various kinds of applications.
+
+`NB!`
+
+The `pack build` command has a useful flag called `--publish` that builds your image directly onto a Docker registry.
+
+Builder Suggestion:
+
+you can run `pack builder suggest` for a list of suggested builders.
+
+`pack builder suggest`
+
+## What happens during rebase?
+
+The rebase command allows app developers or operators to quickly update an app image when its runtime base image has changed. By using image layer rebasing, this command eliminates the need to fully rebuild the app.
+
+The rebase command can check if a newer version of the app’s base image exists (either locally or in a registry). If a newer version is found, rebase updates the app image’s layer metadata to reference the newer base image version.
+
+The `pack rebase` command has a --publish flag that can be used to publish the updated app image directly to a registry.
+
+## What is a platform?
+
+A platform orchestrates builds by invoking the lifecycle binary along with buildpacks and application source code to produce a runnable OCI image.
+
+Examples of a platform might include:
+* A local CLI tool that uses buildpacks to create OCI images.
+* A plugin for a continuous integration service that uses buildpacks to create OCI images.
