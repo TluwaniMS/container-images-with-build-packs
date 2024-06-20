@@ -59,3 +59,13 @@ A platform orchestrates builds by invoking the lifecycle binary along with build
 Examples of a platform might include:
 * A local CLI tool that uses buildpacks to create OCI images.
 * A plugin for a continuous integration service that uses buildpacks to create OCI images.
+
+## What are base images?
+
+#### Build image
+
+The build image provides the base image from which the build environment is constructed. The build environment is the containerized environment in which the lifecycle (and thereby buildpacks) are executed.
+
+#### Run image
+
+The run image provides the base image for application images.
