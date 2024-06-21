@@ -20,3 +20,9 @@ pack build <image-name> --buildpack paketo-buildpacks/nodejs \
   --path examples/apps/nodejs/app
 ```
 
+```
+pack build <account>/<image>:<tag> --buildpack paketo-buildpacks/nodejs \
+  --builder paketobuildpacks/builder-jammy-base \
+  --path examples/apps/nodejs/app \
+  --publish
+```
