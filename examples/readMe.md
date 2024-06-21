@@ -15,13 +15,13 @@ Pack works as both a Command Line Interface (CLI) and a Go library.
 build basic nodejs webserver image:
 
 ```
-pack build <image-name> --buildpack paketo-buildpacks/nodejs \
+pack build <image-name>:<tag> --buildpack paketo-buildpacks/nodejs \
   --builder paketobuildpacks/builder-jammy-base \
   --path examples/apps/nodejs/app
 ```
 
 ```
-pack build <account>/<image>:<tag> --buildpack paketo-buildpacks/nodejs \
+pack build <account>/<image-name>:<tag> --buildpack paketo-buildpacks/nodejs \
   --builder paketobuildpacks/builder-jammy-base \
   --path examples/apps/nodejs/app \
   --publish
