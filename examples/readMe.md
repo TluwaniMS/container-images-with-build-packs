@@ -12,6 +12,16 @@ Pack works as both a Command Line Interface (CLI) and a Go library.
 
 [Install Pack CLI](https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/)
 
+# Ensure you're signed into a docker-registry
+
+```
+kubectl create secret docker-registry docker-user-pass \
+    --docker-username=<user-name> \
+    --docker-password=<password> \
+    --docker-server=<server> \
+    --namespace <namespace>
+```
+
 ## Nodejs
 
 build basic nodejs webserver image:
