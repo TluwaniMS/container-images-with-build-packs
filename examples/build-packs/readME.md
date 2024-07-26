@@ -27,3 +27,15 @@ The builder transforms application source code into runnable artifacts that ca
 
 Export
 The exporter creates the final OCI image.
+
+
+
+
+//////////
+
+```
+pack buildpack new ben/node-js \
+    --api 0.10 \
+    --path ben-node-js-buildpack \
+    --version 0.1.0
+```

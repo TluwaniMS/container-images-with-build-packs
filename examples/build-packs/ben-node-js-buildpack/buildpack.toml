@@ -1,0 +1,11 @@
+api = "0.10"
+WithWindowsBuild = false
+WithLinuxBuild = false
+
+[buildpack]
+  id = "ben/node-js"
+  version = "0.1.0"
+
+[[targets]]
+  os = "darwin"
+  arch = "arm64"
