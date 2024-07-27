@@ -26,9 +26,19 @@ A buildpack transforms application source code by analyzing it and determining t
 * Running source code compilation (if needed).
 * Configuring the application entrypoint and any startup scripts.
 
+`e.g`
+* A Node buildpack may run npm install if it detected a package-lock.json file.
+
 ## What happens during the build process?
 
 The build process executes one or more buildpacks against an application’s source code to produce a runnable OCI image. During this process, the build-time base image serves as the environment in which buildpacks are executed, while the runtime base image serves as the foundation for the final application image. Buildpacks can be bundled with a specific build-time base image, resulting in a builder image. Builders offer a convenient way to distribute buildpacks.
+
+## What do they look like?
+
+Typical buildpacks consist of at least three files:
+* buildpack.toml – provides metadata about the buildpack, containing information such as its name, ID, and version.
+* bin/detect – performs detect.
+* bin/build – performs build.
 
 ## What is a builder?
 
@@ -60,12 +70,3 @@ Examples of a platform might include:
 * A local CLI tool that uses buildpacks to create OCI images.
 * A plugin for a continuous integration service that uses buildpacks to create OCI images.
 
-## What are base images?
-
-#### Build image
-
-The build image provides the base image from which the build environment is constructed. The build environment is the containerized environment in which the lifecycle (and thereby buildpacks) are executed.
-
-#### Run image
-
-The run image provides the base image for application images.
