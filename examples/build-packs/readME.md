@@ -39,3 +39,15 @@ pack buildpack new ben/node-js \
     --path ben-node-js-buildpack \
     --version 0.1.0
 ```
+
+```
+pack config default-builder cnbs/sample-builder:jammy
+```
+
+```
+pack config trusted-builders add cnbs/sample-builder:jammy
+```
+
+```
+pack build ben-pack-nodejs --path ../apps/nodejs/app --buildpack ./ben-node-js-buildpack --no-color
+```

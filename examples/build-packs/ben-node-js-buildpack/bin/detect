@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
+set -eo pipefail
 
-exit 0
+if [[ ! -f package.json ]]; then
+   exit 100
+else
+  echo "NodeJs Buildpack"
+  exit 0
+fi
