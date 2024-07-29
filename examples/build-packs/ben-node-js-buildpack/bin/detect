@@ -4,6 +4,5 @@ set -eo pipefail
 if [[ ! -f package.json ]]; then
    exit 100
 else
-  echo "NodeJs Buildpack"
   exit 0
 fi
