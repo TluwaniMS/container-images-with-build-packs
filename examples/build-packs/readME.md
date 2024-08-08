@@ -49,5 +49,5 @@ pack config trusted-builders add cnbs/sample-builder:jammy
 ```
 
 ```
-pack build ben-pack-nodejs --path ../apps/nodejs/app --buildpack ./ben-node-js-buildpack --no-color
+pack build ben-pack-nodejs:0.1.0 --path examples/apps/nodejs/app --buildpack examples/build-packs/ben-node-js-buildpack --no-color
 ```
