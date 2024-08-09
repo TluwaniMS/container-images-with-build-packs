@@ -22,7 +22,23 @@ Run builpack on Nodejs App
 pack build node-webserver-paketo:0.4.0 --builder tlokweng-builder:0.4.0 --path examples/apps/nodejs/app
 ```
 
+Run docker container for Nodejs App
+```
 docker run --detach -p 3002:3002 --name node-server node-webserver-paketo:0.4.0
+```
+
+------------
+
+Run builpack on Nodejs with scripts App
+
+```
+pack build node-webserver-with-script-paketo:0.3.0 --builder tlokweng-builder:0.4.0 --path examples/apps/nodejs/app-with-script --env BP_NODE_RUN_SCRIPTS="test:unit,test:integration"
+```
+
+Run docker container for Nodejs with scripts App
+```
+docker run --detach -p 3008:3008 --name node-server-with-script node-webserver-with-script-paketo:0.3.0
+```
 
 Check app logs
 
