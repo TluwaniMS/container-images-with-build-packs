@@ -1,9 +1,10 @@
-# Define the base image
-FROM ubuntu:jammy
+# Specify the platform to ensure the image is built for linux/amd64
+# Use --platform=linux/amd64 in the FROM instruction
+FROM --platform=linux/amd64 ubuntu:jammy
 
 # Install packages that we want to make available at build time
 RUN apt-get update && \
-  apt-get install -y xz-utils ca-certificates && \
+  apt-get install -y xz-utils ca-certificates libc6 && \
   rm -rf /var/lib/apt/lists/*
 
 # Set required CNB user information

@@ -1,0 +1,19 @@
+# Base images used to create the builder
+[build]
+image = "tlou/bjatladi-builder:0.4.0"
+[run]
+[[run.images]]
+image = "tlou/bjatladi-runner:0.4.0"
+
+# Buildpacks to include in builder
+[[buildpacks]]
+  uri = "docker://gcr.io/paketo-buildpacks/nodejs:3.0.2"
+  version = "3.0.2"
+
+# Order used for detection
+[[order]]
+  [[order.group]]
+    id = "paketo-buildpacks/nodejs"
+    version = "3.0.2"
+
+
