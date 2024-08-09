@@ -23,3 +23,9 @@ pack build node-webserver-paketo:0.4.0 --builder tlokweng-builder:0.4.0 --path e
 ```
 
 docker run --detach -p 3002:3002 --name node-server node-webserver-paketo:0.4.0
+
+Check app logs
+
+```
+docker container logs <container-name>
+```
